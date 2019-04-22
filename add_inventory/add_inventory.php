@@ -55,6 +55,7 @@
         <div class="form-group">
             <label for="item_color">Color:</label>
             <select name="item_color">
+                <option value="0">Not Applicable</option>
                 <?php foreach ($colors as $color) : ?>
                     <option value="<?= $color['colorID'] ?>"><?= $color['color'] ?></option>
                 <?php endforeach; ?>
@@ -65,6 +66,7 @@
             <button type="submit" class="btn btn-primary btn-lg">Add Inventory Item &raquo;</button>
         </div>
     </form>
+    <?=$message?>
 </div>
 
 <?php include '../view/footer.php'; ?>

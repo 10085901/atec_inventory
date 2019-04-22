@@ -10,7 +10,6 @@ include '../view/header.php';
 
 <div class="container">
 <h2>Update Item:</h2>
-<?=$message?>
 <form action="index.php" method="post">
 <input type="hidden" name="action" value="fetch_item" />
 <div class="form-group">
@@ -21,5 +20,6 @@ Item Number (Barcode):
 <button type="submit" class="btn btn-primary btn-lg">Search &raquo;</button>
 </div>
 </form>
+    <?=$message?>
 </div>
 <?php include '../view/footer.php';?>

@@ -1,6 +1,4 @@
-<?php 
-session_start();
-include 'view/header.php';
+<?php include 'header.php';
 ?>
 
 <div class="container">
@@ -9,4 +7,4 @@ include 'view/header.php';
     To continue, you must logout and log in with an inventory admin acount.</h3>
 </div>
 
-<?php include 'view/footer.php'; ?>
+<?php include 'footer.php'; ?>

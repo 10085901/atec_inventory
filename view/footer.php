@@ -1,6 +1,6 @@
 <footer class="page-footer">
 <div class="container-fluid text-right">
-<p>&copy; UVU Group 6</p>
+<p>&copy; UVU Group 6&nbsp;<?php echo date("Y");?></p>
 </div>
 </footer>
 

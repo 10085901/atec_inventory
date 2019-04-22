@@ -5,7 +5,7 @@ include '../view/header.php';
 <div class="jumbotron">
 <div class="container">
 <h2>User Login:</h2>
-<form action="/atec_inventory/user_login/index.php" method="post">
+<form action="/atec_inventory/model/user_login_db.php" method="post">
 <input type="hidden" name="action" value="login" />
 <div class="form-group">
 User Name:

@@ -1,7 +1,7 @@
 <?php
-//header('Content-Type: text/html; charset=iso-8859-1');
+
 if (!isset($_SESSION['user_name'])) {
-    $logged_in = '<a class="btn btn-success navbar-btn" href="/atec_inventory/user_login" role="button">Login</a>';
+    $logged_in = '<a class="btn btn-success navbar-btn" href="/atec_inventory/view/user_login.php" role="button">Login</a>';
 } else
     $logged_in = '<a class="btn btn-danger navbar-btn" href="/atec_inventory/logout.php" role="button">Logout</a>';
 ?>
@@ -51,11 +51,13 @@ This system is designed to track paper goods in the lunchroom, cleaning supplies
                 </li>
                 <li class="nav-item dropdown <?=$nav_item[3]?>">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Add or Update Item
+                        Admin Tasks
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/atec_inventory/add_inventory/">Add an Item</a>
-                        <a class="dropdown-item" href="/atec_inventory/update_inventory/">Update an Item</a>
+                        <a class="dropdown-item" href="/atec_inventory/add_inventory/">Add Item to Database</a>
+                        <a class="dropdown-item" href="/atec_inventory/update_inventory/">Update Item in Database</a>
+                        <a class="dropdown-item" href="/atec_inventory/add_store/">Add Store to Database</a>
+                        <a class="dropdown-item" href="/atec_inventory/add_color/">Add Color to Database</a>
                     </div>
                 </li>
                 <li class="nav-item">

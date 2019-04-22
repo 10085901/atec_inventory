@@ -2,13 +2,16 @@
 require('database.php');
 
 global $db;
-$query = 'SELECT * FROM colors';
-$statement = $db->prepare($query);
+$query_colors = "SELECT * FROM colors
+                    WHERE color NOT LIKE 'Not Applicable'
+                    ORDER BY color ASC";
+$statement = $db->prepare($query_colors);
 $statement->execute();
 $colors = $statement->fetchAll();
 
-$query_2 = 'SELECT * FROM store';
-$statement = $db->prepare($query_2);
+$query_store = 'SELECT * FROM store
+                    ORDER BY store ASC';
+$statement = $db->prepare($query_store);
 $statement->execute();
 $stores = $statement->fetchAll();
 
@@ -63,6 +66,30 @@ function update_inventory_item($item_number, $item, $item_cost, $item_quantity, 
     $statement->bindParam(':minimum_item_quantity', $minimum_item_quantity);
     $statement->bindParam(':item_quantity', $item_quantity);
     $statement->bindParam(':purchase_store', $purchase_store);
+    $statement->execute();
+
+    return $statement->rowCount();
+}
+
+function add_store($store_count, $store){
+    global $db;
+    $query = 'INSERT INTO store (SID, store)
+                VALUES (:store_count, :store)';
+    $statement = $db->prepare($query);
+    $statement->bindParam(':store_count', $store_count);
+    $statement->bindParam(':store', $store);
+    $statement->execute();
+
+    return $statement->rowCount();
+}
+
+function add_color($color_count, $color){
+    global $db;
+    $query = 'INSERT INTO colors (colorID, color)
+                VALUES (:color_count, :color)';
+    $statement = $db->prepare($query);
+    $statement->bindParam(':color_count', $color_count);
+    $statement->bindParam(':color', $color);
     $statement->execute();
 
     return $statement->rowCount();
